@@ -5,18 +5,18 @@ export const deliveryOptions = [
     priceCents: 0,
   },
   {
-    id: "1",
+    id: "2",
     deliveryDays: 3,
     priceCents: 499,
   },
   {
-    id: "1",
+    id: "3",
     deliveryDays: 1,
     priceCents: 999,
   },
 ];
 
-export function getDelieeryOption(deliveryOptionId) {
+export function getDeliveryOption(deliveryOptionId) {
   let deliveryOption;
 
   deliveryOptions.forEach((option) => {
@@ -24,5 +24,6 @@ export function getDelieeryOption(deliveryOptionId) {
       deliveryOption = option;
     }
   });
+
   return deliveryOption || deliveryOptions[0];
 }
