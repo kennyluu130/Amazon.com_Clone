@@ -37,7 +37,7 @@ function Cart(localStorageKey) {
       if (matchingItem) {
         matchingItem.quantity += 1;
       } else {
-        cart.push({
+        this.cartItems.push({
           productId: productId,
           quantity: 1,
           deliveryOptionId: "1",
@@ -50,7 +50,7 @@ function Cart(localStorageKey) {
     removeFromCart(productId) {
       const newCart = [];
 
-      this.cartItemsforEach((cartItem) => {
+      this.cartItems.forEach((cartItem) => {
         if (cartItem.productId !== productId) {
           newCart.push(cartItem);
         }
@@ -64,7 +64,7 @@ function Cart(localStorageKey) {
     updateDeliveryOption(productId, deliveryOptionId) {
       let matchingItem;
 
-      this.cartItem.forEach((cartItem) => {
+      this.cartItems.forEach((cartItem) => {
         if (productId === cartItem.productId) {
           matchingItem = cartItem;
         }
@@ -85,3 +85,6 @@ const businessCart = Cart("cart-business");
 cart.loadFromStorage();
 
 businessCart.loadFromStorage();
+
+console.log(cart);
+console.log(businessCart);
