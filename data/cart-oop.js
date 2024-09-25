@@ -3,7 +3,7 @@ function Cart(localStorageKey) {
     cartItems: undefined,
 
     loadFromStorage() {
-      this.cartItems = JSON.parse(localStorage.getItem("localStorageKey"));
+      this.cartItems = JSON.parse(localStorage.getItem(localStorageKey));
 
       if (!this.cartItems) {
         this.cartItems = [
@@ -22,7 +22,7 @@ function Cart(localStorageKey) {
     },
 
     saveToStorage() {
-      localStorage.setItem("localStorageKey", JSON.stringify(this.cartItems));
+      localStorage.setItem(localStorageKey, JSON.stringify(this.cartItems));
     },
 
     addToCart(productId) {
