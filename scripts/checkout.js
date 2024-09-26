@@ -2,6 +2,7 @@ import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 import { loadProducts, loadProductsFetch } from "../data/products.js";
 import { loadCart } from "../data/cart.js";
+import { renderCartQuantity } from "./checkout/cartQuantity.js";
 // import '../data/cart-class.js';
 // import '../data/backend-practice.js';
 
@@ -24,6 +25,7 @@ async function loadPage() {
 
   renderOrderSummary();
   renderPaymentSummary();
+  renderCartQuantity();
 }
 loadPage();
 

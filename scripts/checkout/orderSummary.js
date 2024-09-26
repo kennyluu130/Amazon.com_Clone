@@ -7,6 +7,7 @@ import {
   getDeliveryOption,
 } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
+import { renderCartQuantity } from "./cartQuantity.js";
 
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
@@ -50,9 +51,7 @@ export function renderOrderSummary() {
                   cartItem.quantity
                 }</span>
               </span>
-              <span class="update-quantity-link link-primary">
-                Update
-              </span>
+              
               <span class="delete-quantity-link link-primary js-delete-link
                 js-delete-link-${matchingProduct.id}"
                 data-product-id="${matchingProduct.id}">
@@ -123,6 +122,7 @@ export function renderOrderSummary() {
       container.remove();
 
       renderPaymentSummary();
+      renderCartQuantity();
     });
   });
 
